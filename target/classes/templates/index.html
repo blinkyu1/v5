@@ -1,0 +1,187 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Calculadora De Creditos</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	  
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
+   
+    <script type="text/javascript" src="#"></script>
+    <link href="./css/stylee.css" th:href="@{/css/stylee.css}" rel="stylesheet" />
+  </head>
+  <body className="snippet-body">
+    <header id="nav" class="sticky-nav">
+      <h1 class="heading"><div _ngcontent-rpu-c191="" class="header-toolbar" style="width: 100%; height: 90px; min-width: 280px; position: absolute;"></h1>
+    </header>
+    <div class="container">
+      <div class="card">
+        <div class="form">
+          <div class="left-side">
+            <div class="left-heading">
+              <h3 class="heading">Pasos</h3>
+            </div>
+            <div class="number-UL">
+              <span class="step-number"></span>
+              
+            </div>
+           
+            <ul class="progress-bar">
+              <li class="active">Simulador</li>
+              <li>Resultado</li>
+            </ul>
+          </div>
+
+          <div class="right-side">
+            <div class="main active">
+              <div class="text">
+                <h2 class="heading">Simula tu Crédito</h2>
+                <p>
+                  Completa los datos para calcular los
+                </p>
+                <p>
+                  intereses para ver tu capacidad de pago.
+                </p>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                <select
+                                           id="Categoria"
+                                           name="Categoria"
+                                           data-rule-required="true"
+                                           data-msg-required="Select a Cliente"
+                                           onchange="cargar()"
+                                         >
+                                        
+                                         </select>
+                </div>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                <select
+                                           id="SubCategoria"
+                                           name="SubCategoria"
+                                           th:value="*{SubCategoria}"
+                                           data-rule-required="true"
+                                           data-msg-required="Select a Cliente"
+                                              
+                                         >
+                                             </select>
+                </div>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <select
+                    id="TipoGarant"
+                    ng-model="vm.TipoGarant"
+                    ng-options="option.symbol for option in vm.TipoGarant"
+                    ng-change="vm.resetTipoGarant()"
+                    class="TipoGarant"
+                    aria-invalid="false"
+                  >
+                    <option selected="selected">Tipo de Garantía</option>
+                    <option label="OTRAS" value="object:16">OTRAS</option>
+                    <option label="HIPOTECARIA" value="object:17">HIPOTECARIA</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                <input
+                    class="monto number"
+                    type="text"
+                    id="monto"
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                    required=""
+                    placeholder="Capital de Inversion"
+                  />
+                </div>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <input
+                    class="mes number"
+                    type="text"
+                    id="mes"
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                    required=""
+                    placeholder="Introduzca el plazo en meses"
+                  />
+                </div>
+              </div>
+              <div class="button">
+                
+                <button
+                  type="submit"
+                  class="bn3 simulaUm"
+                  id="subt"
+                  value="Calcular"
+                >
+                  Siguiente
+                </button>
+                <button
+                  type="submit"
+                  id="subm"
+                  class="bn3 next_button"
+                  style="display:none"
+                  value="Calcular"
+                >
+                  Siguiente
+                </button>
+              </div>
+            </div>
+
+            <div class="main">
+              <div class="text">
+                <h2 class="heading">Resultado</h2>
+                <p>
+                  Haz cumplir tu sueño de tener eso lo que tanto sueñas Tener
+                </p>
+                <p>
+                   BancoSol te lo hace realidad.
+                </p>
+              </div>
+
+            </br>
+              <div class="button">
+                <button class="bn3 back_button"> Cambiar datos y recalcular</button>
+              </div>
+              
+         
+              
+              <div class="input-text">
+                <div id="table_body"></div>
+                  
+                 
+              </div>  
+              <div class="input-text">
+            
+                <div class="right-form" id="ya">
+                  
+                </div>
+               
+            </div>        
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase.js "></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./js/funcione.js"th:href="@{/js/funcione.js}"></script>    
+    <script src="./js/Navegator.js"th:href="@{/js/Navegator.js}"></script>
+  </body>
+</html>
